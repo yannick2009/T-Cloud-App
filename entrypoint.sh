@@ -1,7 +1,7 @@
 #!/bin/sh
 
-echo "⏳ Pause de 10 secondes avant de lancer les migrations..."
-sleep 5
+echo "⏳ Pause de 30 secondes avant de lancer les migrations..."
+sleep 30
 
 echo "✅ Lancement des migrations..."
 php artisan migrate --force

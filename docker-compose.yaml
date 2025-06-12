@@ -14,12 +14,11 @@ services:
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
   app:
-    # set container name app
     container_name: app
     build:
       context: .
       dockerfile: Dockerfile
-  
+    # image: "yannick2009/webapp:latest" # Remplacez par l'image de votre application
     ports:
       - "8081:80"
     environment:
@@ -49,7 +48,7 @@ services:
       MYSQL_TCP_PORT: 3306
     volumes:
       - db_data:/var/lib/mysql
-      - ./mysql-init:/docker-entrypoint-initdb.d  # Permet d'exécuter des scripts SQL initiaux
+      - ./mysql-init:/docker-entrypoint-initdb.d # Permet d'exécuter des scripts SQL initiaux
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 5s
