@@ -24,7 +24,7 @@ COPY entrypoint.sh /entrypoint.sh
 
 # Fixer les permissions recommandées
 RUN chown -R www-data:www-data . \
-    && chmod -R 775 storage bootstrap/cache
+    && chmod -R 755 storage bootstrap/cache
 
 # Configurer Apache
 ENV APACHE_DOCUMENT_ROOT /var/www/html/public
